@@ -8,3 +8,7 @@ SQL:
 https://www.techtarget.com/searchdatamanagement/definition/SQL#:~:text=Structured%20Query%20Language%20(SQL)%20is,on%20the%20data%20in%20them.
 https://www.javatpoint.com/sql-tutorial
 https://www.w3schools.com/sql/sql_intro.asp
+
+SOLID:
+https://www.c-sharpcorner.com/UploadFile/damubetha/solid-principles-in-C-Sharp/
+https://medium.com/codex/solid-principles-in-c-df43187697f4

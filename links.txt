@@ -1,0 +1,10 @@
+REST:
+https://krify.co/advantages-and-disadvantages-of-rest-api/
+https://www.geeksforgeeks.org/difference-between-put-and-patch-request/#:~:text=PUT%20is%20a%20method%20of%20modifying%20resource%20where%20the%20client,without%20modifying%20the%20entire%20data.
+https://www.c-sharpcorner.com/UploadFile/4b0136/restful-api-in-Asp-Net-introduction-of-rest-web-api/#:~:text=What%20is%20REST,resources%20are%20defined%20and%20addressed.
+https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api
+
+SQL:
+https://www.techtarget.com/searchdatamanagement/definition/SQL#:~:text=Structured%20Query%20Language%20(SQL)%20is,on%20the%20data%20in%20them.
+https://www.javatpoint.com/sql-tutorial
+https://www.w3schools.com/sql/sql_intro.asp

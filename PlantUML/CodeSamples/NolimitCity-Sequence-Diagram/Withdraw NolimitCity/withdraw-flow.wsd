@@ -1,0 +1,86 @@
+@startuml withdraw-flow
+
+alt request method is Withdraw
+
+    NolimitCity ->> NolimitCityController: POST/debit HTTP/1.1 \n{Debit Request}
+
+    NolimitCityController ->> BetHandler: Bet
+
+    BetHandler ->> TransactionManager: Get
+
+    TransactionManager ->> TransactionService: <<Get>> HTTP/2
+
+    TransactionService --> TransactionManager
+
+    TransactionManager --> BetHandler: Transaction
+
+    alt Transaction Exist?
+
+        note right of NolimitCityController #DimGray
+                Idempotency Check
+        endnote
+        BetHandler --> NolimitCityController: Success
+    end
+
+    BetHandler ->> SessionContextManager: Get
+
+    note right of SessionContextManager #DimGray
+        ShouldExtend = true
+    endnote
+
+    SessionContextManager ->> SessionContextService: <<GetAndExtend HTTP/2>>
+
+    SessionContextService --> SessionContextManager
+
+    SessionContextManager --> BetHandler: SessionContext
+
+    alt SessionContext Status Is Active
+
+        BetHandler ->> TransactionManager: Create
+
+        TransactionManager ->> TransactionService: <<Create>> HTTP/2
+
+        TransactionService --> TransactionManager
+
+        TransactionManager ->> TransactionService: <<UPDATE: [Authorized, Submitted, Completed]>> HTTP/2
+
+        TransactionService --> TransactionManager
+
+        TransactionManager --> BetHandler: Transaction
+
+        alt Transaction Is Successful
+        
+            BetHandler ->> TransactionBatchManager: Compute
+
+            TransactionBatchManager ->> TransactionBatchService: <<Compute>> HTTP/2
+
+            TransactionBatchService --> TransactionBatchManager
+
+            TransactionBatchManager --> BetHandler: Success
+
+            BetHandler --> NolimitCityController: Success
+
+            NolimitCityController --> NolimitCity: result = 0\ndata:{data...}
+
+        else
+
+            BetHandler --> NolimitCityController: Failure(errorCode)
+
+            NolimitCityController --> NolimitCity: result != 0\nmessage:{errorCode...}
+
+        end
+
+    else
+        BetHandler --> NolimitCityController: Failure(NotFound)
+
+        NolimitCityController --> NolimitCity: result != 0\nmessage:{errorCode...}
+
+    end
+    
+else
+
+    NolimitCityController --> NolimitCity: error:{...error}\nresult=null
+
+end
+
+@enduml

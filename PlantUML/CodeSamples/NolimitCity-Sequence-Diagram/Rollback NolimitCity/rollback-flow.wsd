@@ -1,0 +1,76 @@
+@startuml rollback-flow
+
+alt request method is Rollback
+
+    NolimitCity ->> NolimitCityController: POST/rollback HTTP/1.1 \n{Rollback Request}
+
+    NolimitCityController ->> RefundHandler: Refund
+
+    RefundHandler ->> TransactionManager: Get
+
+    TransactionManager ->> TransactionService: <<Get>>HTTP/2
+
+    TransactionService --> TransactionManager
+
+    TransactionManager --> RefundHandler: Transaction
+
+
+    alt Transaction not found || Transaction Status is Reversed
+
+        note right of TransactionBatchService #DimGray
+                    Transaction to refund 
+                    not found || idempotency check
+        endnote
+
+            RefundHandler --> NolimitCityController: Success
+    end
+
+    RefundHandler ->> TransactionManager: Cancel
+
+    TransactionManager ->> TransactionService: <<Update Reversed>>HTTP/2
+
+    TransactionService --> TransactionManager
+
+    TransactionManager --> RefundHandler: Transcation
+
+    alt Transaction is Successful 
+    
+        RefundHandler ->> SessionContextManager: Get
+
+        note right of SessionContextManager #DimGray
+                    ShouldExtend = false
+        endnote
+
+        SessionContextManager ->> SessionContextService: <<Get>>HTTP/2
+
+        SessionContextService --> SessionContextManager
+
+        SessionContextManager --> RefundHandler: SessionContext
+
+        RefundHandler ->> TransactionBatchManager: Process
+
+        TransactionBatchManager ->> TransactionBatchService: <<Process>>HTTP/2
+
+        TransactionBatchService --> TransactionBatchManager
+
+        TransactionBatchManager --> RefundHandler: Success
+
+        RefundHandler --> NolimitCityController: Success
+
+        NolimitCityController --> NolimitCity: result = 0\ndata:{data...}
+
+    else
+
+        RefundHandler --> NolimitCityController: Failure(errorCode)
+
+        NolimitCityController --> NolimitCity: result !-0\nmessage:{errorCode}
+
+    end
+
+else
+
+    NolimitCityController --> NolimitCity: error:{...error}\nresult=null
+
+end
+
+@enduml

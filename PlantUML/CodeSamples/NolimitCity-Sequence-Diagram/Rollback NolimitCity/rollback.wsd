@@ -1,0 +1,18 @@
+@startuml rollback
+
+title Rollback
+
+actor "NolimitCity" as NolimitCity
+participant "NolimitCityController" as NolimitCityController
+participant "RefundHandler" as RefundHandler
+participant "TransactionManager" as TransactionManager
+participant "TransactionService: gRPC" as TransactionService
+participant "TransactionBatchManager" as TransactionBatchManager
+participant "TransactionBatchService: gRPC" as TransactionBatchService
+participant "RefundHandler" as RefundHandler
+participant "SessionContextManager" as SessionContextManager
+participant "SessionContextService" as SessionContextService
+
+!include rollback-flow.wsd
+
+@enduml

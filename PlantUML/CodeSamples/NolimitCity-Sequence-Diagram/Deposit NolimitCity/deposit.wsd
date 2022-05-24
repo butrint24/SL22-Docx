@@ -1,0 +1,18 @@
+@startuml deposit
+
+title "Deposit"
+
+actor "NolimitCity" as NolimitCity
+
+participant "NolimitCityController" as NolimitCityController
+participant "ResultHandler" as ResultHandler
+participant "TransactionManager" as TransactionManager
+participant "TransactionService: gRPC" as TransactionService
+participant "TransactionBatchManager" as TransactionBatchManager
+participant "TransactionBatchService: gRPC" as TransactionBatchService
+participant "SessionContextManager" as SessionContextManager
+participant "SessionContextService: gRPC" as SessionContextService
+
+!include deposit-flow.wsd
+
+@enduml

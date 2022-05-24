@@ -1,0 +1,107 @@
+@startuml deposit-flow
+
+NolimitCity ->> NolimitCityController: POST/deposit HTTP/1.1 \n{Deposit Request}
+
+alt request method is Deposit
+
+    NolimitCityController ->> ResultHandler: Result
+
+    ResultHandler ->> TransactionManager: Get
+
+    TransactionManager ->> TransactionService: <<Get>>HTTP/2
+
+    TransactionService --> TransactionManager
+
+    TransactionManager --> ResultHandler: Transaction
+
+    alt Transaction Status is Completed
+
+        note right of NolimitCityController #DimGray
+                Idempotency Check
+        endnote
+
+        ResultHandler --> NolimitCityController: Success
+
+    end
+
+    ResultHandler ->> TransactionBatchManager: Get
+
+    TransactionBatchManager ->> TransactionBatchService: <<Get>>HTTP/2
+
+    TransactionBatchService --> TransactionBatchManager
+
+    TransactionBatchManager --> ResultHandler: TransactionBatch
+
+    alt TransactionBatch not Found
+
+        ResultHandler --> NolimitCityController: Failure("TransactionBatchNotFound")
+
+    end
+
+    ResultHandler ->> SessionContextManager: Get
+
+    note right of SessionContextManager #DimGray
+        ShouldExtend = false
+    endnote
+
+    SessionContextManager ->> SessionContextService: <<Get>>HTTP/2
+
+    SessionContextService --> SessionContextManager
+
+    SessionContextManager --> ResultHandler: SessionContext
+
+    ResultHandler ->> TransactionManager: Create
+
+    TransactionManager ->> TransactionService: <<Create>>HTTP/2
+
+    TransactionService --> TransactionManager
+
+    TransactionManager ->> TransactionService: <<Update:[Authorised, Submitted, Completed]>>HTTP/2
+
+    TransactionService --> TransactionManager
+
+    TransactionManager --> ResultHandler: Transactions
+
+    alt Transaction is Successful
+
+        alt 
+            
+            ResultHandler ->> TransactionBatchManager: Process
+
+            TransactionBatchManager ->> TransactionBatchService: <<Process>>HTTP/2
+
+            TransactionBatchService --> TransactionBatchManager
+
+            TransactionBatchManager --> ResultHandler: Success
+
+        else
+
+            ResultHandler ->> TransactionBatchManager: Compute
+
+            TransactionBatchManager ->> TransactionBatchService: <<Compute>>HTTP/2
+
+            TransactionBatchService --> TransactionBatchManager
+
+            TransactionBatchManager --> ResultHandler: Success
+
+        end
+
+        ResultHandler --> NolimitCityController: Success
+
+        NolimitCityController --> NolimitCity: result = 0\ndata:{data...}
+
+    else
+
+        ResultHandler --> NolimitCityController: Failure(errorCode)
+
+        NolimitCityController --> NolimitCity: result = !0\nmessage:{errorCode}
+
+    end
+
+else
+
+    NolimitCityController --> NolimitCity: error:{...error}\nresult=null
+
+end
+
+@enduml

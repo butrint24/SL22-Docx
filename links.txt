@@ -21,3 +21,8 @@ Postgress SQL:
 https://www.postgresql.org/files/documentation/pdf/14/postgresql-14-A4.pdf
 https://fulcrum.rocks/blog/why-use-postgresql-database/#:~:text=Postgres%20allows%20you%20to%20store,lot%20of%20supporters%20and%20critics.
 https://www.guru99.com/postgresql-vs-mysql-difference.html
+
+Mediator Pattern:
+https://refactoring.guru/design-patterns/mediator
+https://refactoring.guru/design-patterns/mediator/csharp/example
+https://www.tutorialspoint.com/design_pattern/mediator_pattern.htm

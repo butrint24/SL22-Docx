@@ -12,3 +12,7 @@ https://www.w3schools.com/sql/sql_intro.asp
 SOLID:
 https://www.c-sharpcorner.com/UploadFile/damubetha/solid-principles-in-C-Sharp/
 https://medium.com/codex/solid-principles-in-c-df43187697f4
+
+PlantUML:
+https://plantuml.com/guide
+https://news.ycombinator.com/item?id=26980704

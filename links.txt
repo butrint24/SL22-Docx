@@ -26,3 +26,15 @@ Mediator Pattern:
 https://refactoring.guru/design-patterns/mediator
 https://refactoring.guru/design-patterns/mediator/csharp/example
 https://www.tutorialspoint.com/design_pattern/mediator_pattern.htm
+
+IOptions Pattern:
+https://andrewlock.net/how-to-use-the-ioptions-pattern-for-configuration-in-asp-net-core-rc2/
+https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-6.0
+https://docs.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles#encapsulation
+https://docs.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles#separation-of-concerns
+
+
+
+
+
+

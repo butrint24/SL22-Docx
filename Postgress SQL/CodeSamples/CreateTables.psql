@@ -1,0 +1,70 @@
+CREATE TABLE student (
+    studentid               INTEGER NOT NULL,
+    name                    VARCHAR(30),
+    lastname                VARCHAR(35),
+    subject                 VARCHAR(50),
+    university_universityid INTEGER NOT NULL
+);
+
+ALTER TABLE student ADD CONSTRAINT student_pk PRIMARY KEY ( studentid,
+                                                            university_universityid );
+
+-- SQLINES LICENSE FOR EVALUATION USE ONLY
+CREATE TABLE teacher (
+    teacherid            INTEGER NOT NULL,
+    name                 VARCHAR(30),
+    lastname             VARCHAR(35),
+    title                VARCHAR(50),
+    student_studentid    INTEGER NOT NULL,
+    student_universityid INTEGER NOT NULL
+);
+
+ALTER TABLE teacher
+    ADD CONSTRAINT teacher_pk PRIMARY KEY ( teacherid,
+                                            student_studentid,
+                                            student_universityid );
+
+-- SQLINES LICENSE FOR EVALUATION USE ONLY
+CREATE TABLE "Teacher_->_University" (
+    university_universityid      INTEGER NOT NULL,
+    teacher_teacherid            INTEGER NOT NULL,
+    teacher_student_studentid    INTEGER NOT NULL,
+    teacher_student_universityid INTEGER NOT NULL
+);
+
+ALTER TABLE "Teacher_->_University"
+    ADD CONSTRAINT "Teacher_->_University_PK" PRIMARY KEY ( university_universityid,
+                                                            teacher_teacherid,
+                                                            teacher_student_studentid,
+                                                            teacher_student_universityid );
+
+-- SQLINES LICENSE FOR EVALUATION USE ONLY
+CREATE TABLE university (
+    universityid   INTEGER NOT NULL,
+    universityname VARCHAR(50),
+    location       VARCHAR(50)
+);
+
+ALTER TABLE university ADD CONSTRAINT university_pk PRIMARY KEY ( universityid );
+
+ALTER TABLE student
+    ADD CONSTRAINT student_university_fk FOREIGN KEY ( university_universityid )
+        REFERENCES university ( universityid );
+
+ALTER TABLE "Teacher_->_University"
+    ADD CONSTRAINT "Teacher_->_University_Teacher_FK" FOREIGN KEY ( teacher_teacherid,
+                                                                    teacher_student_studentid,
+                                                                    teacher_student_universityid )
+        REFERENCES teacher ( teacherid,
+                             student_studentid,
+                             student_universityid );
+
+ALTER TABLE "Teacher_->_University"
+    ADD CONSTRAINT "Teacher_->_University_University_FK" FOREIGN KEY ( university_universityid )
+        REFERENCES university ( universityid );
+
+ALTER TABLE teacher
+    ADD CONSTRAINT teacher_student_fk FOREIGN KEY ( student_studentid,
+                                                    student_universityid )
+        REFERENCES student ( studentid,
+                             university_universityid );

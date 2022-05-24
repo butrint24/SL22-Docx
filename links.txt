@@ -16,3 +16,6 @@ https://medium.com/codex/solid-principles-in-c-df43187697f4
 PlantUML:
 https://plantuml.com/guide
 https://news.ycombinator.com/item?id=26980704
+
+Postgress SQL:
+https://www.postgresql.org/files/documentation/pdf/14/postgresql-14-A4.pdf

@@ -1,0 +1,15 @@
+C:\Users\butri\Desktop\SL22-Docx\Unit Testing\CodeSamples\Bank\Bank\bin\Debug\net6.0\Bank.exe
+C:\Users\butri\Desktop\SL22-Docx\Unit Testing\CodeSamples\Bank\Bank\bin\Debug\net6.0\Bank.deps.json
+C:\Users\butri\Desktop\SL22-Docx\Unit Testing\CodeSamples\Bank\Bank\bin\Debug\net6.0\Bank.runtimeconfig.json
+C:\Users\butri\Desktop\SL22-Docx\Unit Testing\CodeSamples\Bank\Bank\bin\Debug\net6.0\Bank.dll
+C:\Users\butri\Desktop\SL22-Docx\Unit Testing\CodeSamples\Bank\Bank\bin\Debug\net6.0\ref\Bank.dll
+C:\Users\butri\Desktop\SL22-Docx\Unit Testing\CodeSamples\Bank\Bank\bin\Debug\net6.0\Bank.pdb
+C:\Users\butri\Desktop\SL22-Docx\Unit Testing\CodeSamples\Bank\Bank\obj\Debug\net6.0\Bank.csproj.AssemblyReference.cache
+C:\Users\butri\Desktop\SL22-Docx\Unit Testing\CodeSamples\Bank\Bank\obj\Debug\net6.0\Bank.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\butri\Desktop\SL22-Docx\Unit Testing\CodeSamples\Bank\Bank\obj\Debug\net6.0\Bank.AssemblyInfoInputs.cache
+C:\Users\butri\Desktop\SL22-Docx\Unit Testing\CodeSamples\Bank\Bank\obj\Debug\net6.0\Bank.AssemblyInfo.cs
+C:\Users\butri\Desktop\SL22-Docx\Unit Testing\CodeSamples\Bank\Bank\obj\Debug\net6.0\Bank.csproj.CoreCompileInputs.cache
+C:\Users\butri\Desktop\SL22-Docx\Unit Testing\CodeSamples\Bank\Bank\obj\Debug\net6.0\Bank.dll
+C:\Users\butri\Desktop\SL22-Docx\Unit Testing\CodeSamples\Bank\Bank\obj\Debug\net6.0\ref\Bank.dll
+C:\Users\butri\Desktop\SL22-Docx\Unit Testing\CodeSamples\Bank\Bank\obj\Debug\net6.0\Bank.pdb
+C:\Users\butri\Desktop\SL22-Docx\Unit Testing\CodeSamples\Bank\Bank\obj\Debug\net6.0\Bank.genruntimeconfig.cache

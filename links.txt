@@ -38,4 +38,8 @@ https://www.guru99.com/unit-testing-guide.html#:~:text=UNIT%20TESTING%20is%20a%2
 https://docs.microsoft.com/en-us/visualstudio/test/walkthrough-creating-and-running-unit-tests-for-managed-code?view=vs-2022
 https://smartbear.com/learn/automated-testing/what-is-unit-testing/
 
-
+Moqk:
+https://softchris.github.io/pages/dotnet-moq.html#references
+https://stackoverflow.com/questions/678878/what-is-use-of-moq
+https://github.com/moq/moq4
+https://github.com/Moq/moq4/wiki/Quickstart

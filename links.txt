@@ -70,3 +70,8 @@ Microservices:
 https://microservices.io/
 https://aws.amazon.com/microservices/
 https://en.wikipedia.org/wiki/Microservices
+
+Apache Kafka:
+https://kafka.apache.org/documentation/
+https://kafka.apache.org/intro
+https://aws.amazon.com/msk/what-is-kafka/

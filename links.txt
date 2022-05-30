@@ -60,3 +60,13 @@ Git (Source Control):
 https://github.com/about
 https://docs.github.com/en/get-started/quickstart/hello-world
 https://www.codeclouds.com/blog/advantages-disadvantages-using-github/
+
+Hexagonal Architecture:
+https://medium.com/@edamtoft/onion-vs-clean-vs-hexagonal-architecture-9ad94a27da91#:~:text=Clean%20Architecture%2C%20Hexagonal%20Architecture%2C%20and,with%20different%20language%20and%20nuances.
+https://dev.to/abh1navv/hexagonal-architecture-3ocl
+https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)
+
+Microservices:
+https://microservices.io/
+https://aws.amazon.com/microservices/
+https://en.wikipedia.org/wiki/Microservices

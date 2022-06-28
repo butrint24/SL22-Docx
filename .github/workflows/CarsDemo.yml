@@ -1,4 +1,4 @@
-name: .NET
+name: CarsDemo
 
 on: [push]
 

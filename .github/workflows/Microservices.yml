@@ -1,4 +1,4 @@
-name: .NET
+name: Microservices
 
 on: [push]
 
@@ -24,10 +24,10 @@ jobs:
         dotnet-version: 6.0.x
     - name: Restore dependencies
       run: dotnet restore
-      working-directory: Microservices\CodeSamples\Microservices-Project
+      working-directory: Microservices/CodeSamples/Microservices-Project/
     - name: Build
       run: dotnet build --no-restore
-      working-directory: Microservices\CodeSamples\Microservices-Project
+      working-directory: Microservices/CodeSamples/Microservices-Project/
     - name: Test
       run: dotnet test --no-build --verbosity normal
-      working-directory: Microservices\CodeSamples\Microservices-Project
+      working-directory: Microservices/CodeSamples/Microservices-Project/

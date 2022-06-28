@@ -1,0 +1,33 @@
+name: .NET
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      env:
+        ARGS: "-av"
+      with:
+        dotnet-version: 6.0.x     
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      env:
+        ARGS: "-av"
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+      working-directory: Microservices\CodeSamples\Microservices-Project
+    - name: Build
+      run: dotnet build --no-restore
+      working-directory: Microservices\CodeSamples\Microservices-Project
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+      working-directory: Microservices\CodeSamples\Microservices-Project

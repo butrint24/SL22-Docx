@@ -2114,23 +2114,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\butri\\.nuget\\packages\\": {},
+    "C:\\Users\\butrints\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\butri\\Desktop\\Unit Tests\\MyProjects\\CarsDemo\\CarsDemo\\CarsDemo.csproj",
+      "projectUniqueName": "C:\\Users\\butrints\\Desktop\\WorkBench\\SL22-Docx\\DEMO PROJECT\\CarsDemo\\CarsDemo\\CarsDemo.csproj",
       "projectName": "CarsDemo",
-      "projectPath": "C:\\Users\\butri\\Desktop\\Unit Tests\\MyProjects\\CarsDemo\\CarsDemo\\CarsDemo.csproj",
-      "packagesPath": "C:\\Users\\butri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\butri\\Desktop\\Unit Tests\\MyProjects\\CarsDemo\\CarsDemo\\obj\\",
+      "projectPath": "C:\\Users\\butrints\\Desktop\\WorkBench\\SL22-Docx\\DEMO PROJECT\\CarsDemo\\CarsDemo\\CarsDemo.csproj",
+      "packagesPath": "C:\\Users\\butrints\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\butrints\\Desktop\\WorkBench\\SL22-Docx\\DEMO PROJECT\\CarsDemo\\CarsDemo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\butri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\butrints\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
